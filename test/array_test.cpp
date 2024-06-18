@@ -1,6 +1,6 @@
+#include <OpenSTL/array.h>
 #include <gtest/gtest.h>
 
-#include <OpenSTL/array.h>
 #include <type_traits>
 
 TEST(array, constructor) {

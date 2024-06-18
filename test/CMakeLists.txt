@@ -18,3 +18,13 @@ gtest_discover_tests(array_test)
 add_executable(algorithm_test algorithm_test.cpp)
 target_link_libraries(algorithm_test PRIVATE  GTest::gtest_main)
 gtest_discover_tests(algorithm_test)
+
+# Test cases for memory
+add_executable(memory_test memory_test.cpp)
+target_link_libraries(memory_test PRIVATE  GTest::gtest_main)
+gtest_discover_tests(memory_test)
+
+# Test cases for vector
+add_executable(vector_test vector_test.cpp)
+target_link_libraries(vector_test PRIVATE  GTest::gtest_main)
+gtest_discover_tests(vector_test)
