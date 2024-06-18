@@ -3,12 +3,14 @@
 
 #include <OpenSTL/internal/iterator.h>
 #include <OpenSTL/type_traits.h>
-#include <stddef.h>
+
+#include <cstddef>
 
 namespace open_stl {
 namespace internal {
-template <typename RandomIterator> class reverse_iterator {
-public:
+template <typename RandomIterator>
+class reverse_iterator {
+ public:
   using difference_type =
       typename iterator_traits<RandomIterator>::difference_type;
   using iterator_type = RandomIterator;
@@ -235,10 +237,10 @@ public:
     return m_iterator <= right.m_iterator;
   }
 
-private:
+ private:
   iterator_type m_iterator;
 };
-} // namespace internal
-} // namespace open_stl
+}  // namespace internal
+}  // namespace open_stl
 
-#endif // OPEN_STL_INTERNAL_REVERSE_ITERATOR_H_
+#endif  // OPEN_STL_INTERNAL_REVERSE_ITERATOR_H_

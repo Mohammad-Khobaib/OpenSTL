@@ -1,7 +1,7 @@
 #ifndef OPEN_STL_INTERNAL_ITERATOR_H_
 #define OPEN_STL_INTERNAL_ITERATOR_H_
 
-#include <stddef.h>
+#include <cstddef>
 
 namespace open_stl {
 
@@ -50,7 +50,8 @@ struct random_access_iterator_tag : public bidirectional_iterator_tag {};
    iterator type, allowing generic code to be written without knowing the exact
    iterator type.
 */
-template <typename Iterator> struct iterator_traits {
+template <typename Iterator>
+struct iterator_traits {
   using iterator_category = typename Iterator::iterator_category;
   using value_type = typename Iterator::value_type;
   using difference_type = typename Iterator::difference_type;
@@ -75,7 +76,8 @@ template <typename Iterator> struct iterator_traits {
     This specialization is used for raw pointers and provides the necessary
    traits for them.
 */
-template <typename T> struct iterator_traits<T *> {
+template <typename T>
+struct iterator_traits<T *> {
   using category = random_access_iterator_tag;
   using value_type = T;
   using difference_type = std::ptrdiff_t;
@@ -101,14 +103,15 @@ template <typename T> struct iterator_traits<T *> {
     This specialization is used for constant raw pointers and provides the
    necessary traits for them.
 */
-template <typename T> struct iterator_traits<const T *> {
+template <typename T>
+struct iterator_traits<const T *> {
   using value_type = const T;
   using difference_type = std::ptrdiff_t;
   using pointer = const T *;
   using reference = const T &;
 };
 
-} // namespace internal
-} // namespace open_stl
+}  // namespace internal
+}  // namespace open_stl
 
-#endif // OPEN_STL_INTERNAL_ITERATOR_H_
+#endif  // OPEN_STL_INTERNAL_ITERATOR_H_
