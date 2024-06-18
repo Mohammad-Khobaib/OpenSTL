@@ -26,10 +26,12 @@ The project can be built using CMake, which is a cross-platform build system. Fo
 
 Follow these steps to build and run the OpenSTL project:
 
+You should build this project using a compiler that supports C++ 20.
+
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/OpenSTL.git
+https://github.com/Mohammad-Khobaib/OpenSTL.git
 ```
 
 Create build directory:
