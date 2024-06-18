@@ -1,16 +1,17 @@
-#ifndef OPEN_STL_ARRAY_
-#define OPEN_STL_ARRAY_
+#ifndef OPEN_STL_ARRAY_H_
+#define OPEN_STL_ARRAY_H_
 
 #include <OpenSTL/algorithm.h>
 #include <OpenSTL/internal/reverse_iterator.h>
 #include <OpenSTL/utility.h>
-#include <stddef.h>
 
-#include <exception>
+#include <cstddef>
 #include <initializer_list>
+#include <stdexcept>
 
 namespace open_stl {
-template <typename T, std::size_t N> struct array {
+template <typename T, std::size_t N>
+struct array {
   using value_type = T;
   using const_iterator = const value_type *;
   using const_pointer = const value_type *;
@@ -743,11 +744,12 @@ template <typename T, std::size_t N> struct array {
            *this == right;
   }
 
-public:
+ public:
   value_type m_data[N] = {value_type()};
 };
 
-template <typename T> struct array<T, 0> {
+template <typename T>
+struct array<T, 0> {
   using value_type = T;
   using const_iterator = const value_type *;
   using const_pointer = const value_type *;
@@ -817,5 +819,5 @@ template <typename T> struct array<T, 0> {
   reference operator[](size_type off) { return *data(); }
   const_reference operator[](size_type off) const { return *data(); }
 };
-} // namespace open_stl
-#endif // OPEN_STL_ARRAY_
+}  // namespace open_stl
+#endif  // OPEN_STL_ARRAY_H_

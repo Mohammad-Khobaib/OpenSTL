@@ -15,7 +15,8 @@ namespace open_stl {
     This struct provides a compile-time constant value indicating whether a
    given type is const-qualified.
 */
-template <typename T> struct is_const {
+template <typename T>
+struct is_const {
   static constexpr bool value = false;
 };
 
@@ -32,17 +33,20 @@ template <typename T> struct is_const {
     This specialization provides a compile-time constant value indicating that a
    const-qualified type is indeed const-qualified.
 */
-template <typename T> struct is_const<const T> {
+template <typename T>
+struct is_const<const T> {
   static constexpr bool value = true;
 };
 
-template <typename T, typename U> struct is_same {
+template <typename T, typename U>
+struct is_same {
   static constexpr bool value = false;
 };
 
-template <typename T> struct is_same<T, T> {
+template <typename T>
+struct is_same<T, T> {
   static constexpr bool value = true;
 };
 
-} // namespace open_stl
-#endif // OPEN_STL_TYPE_TRAITS_H_
+}  // namespace open_stl
+#endif  // OPEN_STL_TYPE_TRAITS_H_

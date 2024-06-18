@@ -81,6 +81,6 @@ bool equal(InputIterator lhs_begin, InputIterator lhs_end,
   }
 }
 
-} // namespace open_stl
+}  // namespace open_stl
 
-#endif // OPEN_STL_ALGORITHM_H_
+#endif  // OPEN_STL_ALGORITHM_H_

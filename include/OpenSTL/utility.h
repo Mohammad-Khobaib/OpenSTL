@@ -17,7 +17,10 @@ namespace open_stl {
     This function enables move semantics by allowing the value of an lvalue to
    be "moved" to an rvalue reference, avoiding unnecessary copies.
 */
-template <typename T> inline T &&move(const T &val) { return (T &&)val; }
+template <typename T>
+inline T &&move(const T &val) {
+  return (T &&)val;
+}
 
 /*
     Swaps the values of two objects of the same type.
@@ -31,12 +34,13 @@ template <typename T> inline T &&move(const T &val) { return (T &&)val; }
    unnecessary copies. Note that 'T' must support move assignment for this
    function to work correctly.
 */
-template <typename T> void swap(T &a, T &b) {
+template <typename T>
+void swap(T &a, T &b) {
   T temp = move(a);
   a = move(b);
   b = move(temp);
 }
 
-} // namespace open_stl
+}  // namespace open_stl
 
-#endif // OPEN_STL_UTILITY_H_
+#endif  // OPEN_STL_UTILITY_H_
